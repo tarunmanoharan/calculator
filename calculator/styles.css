@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap');
+
+
+
+*
+{
+    margin : 0;
+    padding : 0;
+    box-sizing: border-box;
+    font-family : 'Poppins' , sans-serif;
+}
+
+body{
+   
+  font-family: 'Poppins',sans-serif;
+  background-color:whitesmoke
+  
+}
+
+.clock-container {
+    background-color:rgb(21,43,74);
+    border-bottom-left-radius:  5%;
+    border-bottom-right-radius: 5%;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+
+.clock
+{
+    position: relative;
+    width:300px;
+    height:90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #c9d5e0;
+    border-radius: 40px;
+    box-shadow: 45px 45px 45px -15px rgba(0,0,0,0.1),
+    inset 15px 15px 10px rgba(255,255,255,0.75),
+    -15px -15px 35px rgba(255, 255, 255, 0.65),
+    inset -2px -2px 15px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    
+}
+
+#time
+{
+    position: absolute;
+    display: flex;
+    padding: 10px 10px;
+    font-size: 2em;
+    font-weight: 600;
+    border-radius: 40px;
+    background: #152b4a;
+    box-shadow: 7px 7px 22px #152b4a66
+    inset 7px 7px 7px rgba(255, 255, 255, 0.55),
+    -9px -9px 15px rgba(255, 255, 255, 1);
+    color:#fff;
+    
+    
+    
+}
+
+
+#time div
+{
+    position: relative;
+    width: 60px;
+    text-align: center;
+    color: var(--clr);
+    opacity: 0.75;
+    
+}
+
+
+#time div :last-child
+{
+    font-size:0.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+}
+
+#time div:nth-child(1)::after,
+#time div:nth-child(2)::after {
+    
+    content:  ':';
+    position: absolute;
+    right:-4px;
+    
+}
+
+#time div:nth-child(2)::after
+{
+    animation: animate 1s steps(1) infinite;
+}
+
+@keyframes animate
+{
+    0%
+    {
+        opacity: 1;
+    }
+    
+    50%
+    {
+        opacity: 0;
+    }
+}
+
+
+
+/* start of the calculator */
+
+.calculator-container {
+    background-color:rgba(235, 244, 245, 0.886);
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 25%;
+    margin-right: 25%;
+    border-radius: 40px; 
+    
+}
+
+.calculator {
+    display: absolute;
+    padding: 10px;
+    justify-content: center;
+    align-content: center;
+    border-radius: 40px;
+    box-shadow: 45px 45px 45px -15px rgba(0, 0, 0, 0.1),
+                inset 15px 15px 10px rgba(255, 255, 255, 0.75),
+                -15px -15px 35px rgba(255, 255, 255, 0.65),
+                inset -2px -2px 15px rgba(0, 0, 0, 0.5);       
+}
+
+
+
+.input {
+    font-family: 'Kalam', cursive;
+    font-size:x-large;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    height: 60px;
+    padding-right: 15px;
+    padding-top: 10px;
+    text-align: center;
+    margin-right: 6px;
+    font-size: 2rem;
+    font-weight: 500;
+    cursor: pointer;
+
+    overflow: hidden;
+    transition: border-color .2s ease-in-out, background-color .2s, box-shadow .2s;
+    border-radius: 40px;
+    box-shadow: 45px 45px 45px -15px rgba(0,0,0,0.1),
+    inset 15px 15px 10px rgba(255,255,255,0.75),
+    -15px -15px 35px rgba(255, 255, 255, 0.65),
+    inset -2px -2px 15px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Style for hover effect */
+.numbers div:hover,
+.input:hover,
+.operators div:hover {
+    background-color: #f1f1f1;
+    border-color: #bbb;
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* Style for active (click) effect */
+.numbers div:active,
+.input:active,
+.operators div:active {
+    font-weight: bold;
+}
+
+/* Style for the equal button */
+div.equal {
+    border: 1px solid #3079ED;
+    border-radius: 5px;
+    width: 17%;
+    text-align: center;
+    padding: 10px;
+    margin: 10px 6px 10px 0;
+    vertical-align: top;
+    cursor: pointer;
+    color: #FFF;
+    background-color: #4d90fe;
+    transition: all .2s ease-in-out;
+}
+
+/* Style for hover effect on the equal button */
+div.equal:hover {
+    background-color: #307CF9;
+    border-color: #1857BB;
+}
+
+/* Style for active (click) effect on the equal button */
+div.equal:active {
+    font-weight: bold;
+}
+
+
+.input:hover {
+  border: 1px solid #bbb;
+  -webkit-box-shadow: inset 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.buttons {
+    margin-top: 10px;
+}
+
+/* .operators {} */
+
+/* Style for the operators container */
+
+
+.operators div {
+
+  font-family: 'Kalam', cursive;
+  font-size:x-large;
+  display: inline-block;
+  border: 1px solid #bbb;
+  border-radius: 1px;
+  width: 150px;
+  text-align: center;
+  padding: 10px;
+  margin: 20px 4px 10px 0;
+  cursor: pointer;
+  background-color:whitesmoke;
+  transition: border-color .2s ease-in-out, background-color .2s, box-shadow .2s;
+  border-radius: 40px;
+    box-shadow: 45px 45px 45px -15px rgba(0,0,0,0.1),
+    inset 15px 15px 10px rgba(255,255,255,0.75),
+    -15px -15px 35px rgba(255, 255, 255, 0.65),
+    inset -2px -2px 15px rgba(0, 0, 0, 0.5);
+}
+
+.operators div:hover {
+  background-color: #ddd;
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  border-color: #aaa;
+}
+
+.operators div:active {
+  font-weight: bold;
+}
+
+.leftPanel {
+  display: inline-block;
+}
+
+
+.numbers div {
+
+  font-family: 'Kalam', cursive;
+  font-size:x-large;
+  display: inline-block;
+  border: 1px solid #ddd;
+  border-radius: 1px;
+  width: 150px;
+  text-align: center;
+  padding: 10px;
+  margin: 10px 4px 10px 0;
+  cursor: pointer;
+  background-color: #f9f9f9;
+  transition: border-color .2s ease-in-out, background-color .2s, box-shadow .2s;
+  border-radius: 40px;
+    box-shadow: 45px 45px 45px -15px rgba(0,0,0,0.1),
+    inset 15px 15px 10px rgba(255,255,255,0.75),
+    -15px -15px 35px rgba(255, 255, 255, 0.65),
+    inset -2px -2px 15px rgba(0, 0, 0, 0.5);
+}
+
+.numbers div:hover {
+  background-color: #f1f1f1;
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  border-color: #bbb;
+}
+
+.numbers div:active {
+  font-weight: bold;
+}
+
+
+div.equal {
+  font-family: 'Kalam', cursive;
+  font-size:xxx-large;
+  display: inline-block;
+  border: 2px solid #1857bb;
+  border-radius: 5%;
+  width: 150px;
+  text-align: center;
+  padding: 110px 10px;
+  margin: 6px 6px 6px 0;
+  vertical-align: top;
+  cursor: pointer;
+  color: #FFF;
+  background-color: #177eaee6;
+  transition: all .2s ease-in-out;
+  
+}
+
+div.equal:hover {
+  background-color: #3d67aa;
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  border-color: #1857BB;
+}
+
+div.equal:active {
+  font-weight: bold;
+}
+
+
